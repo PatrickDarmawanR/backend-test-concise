@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
+    
     if (!user) return res.status(404).json({ error: "User not found" });
     await user.update(req.body);
     res.json(user);
@@ -26,6 +27,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
+    
     if (!user) return res.status(404).json({ error: "User not found" });
     await user.destroy();
     res.json({ message: "User successfully deleted" });

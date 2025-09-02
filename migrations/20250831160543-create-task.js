@@ -19,12 +19,12 @@ export async function up(queryInterface, Sequelize) {
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE,
-      defaultValue: Sequelize.fn("NOW"),
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
     },
     updatedAt: {
       allowNull: false,
       type: Sequelize.DATE,
-      defaultValue: Sequelize.fn("NOW"),
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
     },
   });
 }

@@ -12,6 +12,30 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  try {
+    const task = await Task.findByPk(req.params.id);
+    
+    if (!task) return res.status(404).json({ error: "Task not found" });
+    await task.update(req.body);
+    res.json(task);
+  } catch {
+    res.status(400).json({ error: "Failed to update task" });
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const task = await Task.findByPk(req.params.id);
+    
+    if (!task) return res.status(404).json({ error: "Task not found" });
+    await task.destroy();
+    res.json({ message: "Task successfully deleted" });
+  } catch {
+    res.status(500).json({ error: "Failed to delete task" });
+  }
+});
+
 router.get("/", async (req, res) => {
   try {
     const tasks = await Task.findAll({ include: User });
@@ -24,34 +48,11 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const task = await Task.findByPk(req.params.id, { include: User });
+    
     if (!task) return res.status(404).json({ error: "Task not found" });
     res.json(task);
   } catch {
     res.status(500).json({ error: "Failed to retrieve task" });
-  }
-});
-
-router.put("/:id", async (req, res) => {
-  try {
-    const task = await Task.findByPk(req.params.id);
-    if (!task) return res.status(404).json({ error: "Task not found" });
-
-    await task.update(req.body);
-    res.json(task);
-  } catch {
-    res.status(400).json({ error: "Failed to update task" });
-  }
-});
-
-router.delete("/:id", async (req, res) => {
-  try {
-    const task = await Task.findByPk(req.params.id);
-    if (!task) return res.status(404).json({ error: "Task not found" });
-
-    await task.destroy();
-    res.json({ message: "Task successfully deleted" });
-  } catch {
-    res.status(500).json({ error: "Failed to delete task" });
   }
 });
 

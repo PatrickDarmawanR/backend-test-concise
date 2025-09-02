@@ -71,7 +71,7 @@ npx sequelize-cli db:migrate
 - PUT /groups/:id -> Update group
 - DELETE /groups/:id -> Delete group
 - GET /groups -> Get all Groups
-- GET /groups/:id -> Get group by id
+- GET /groups/:id -> Get group by id 
 - GET /groups/:id/users -> Get group by id with their users
 - POST /groups/:id/users/:id -> Add user to group by id
 

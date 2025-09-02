@@ -34,16 +34,12 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id, {
-      include: [Group, Task],
-    });
-
-    if (!user) return res.status(404).json({ error: "User not found" });
-    res.json(user);
+    const users = await User.findAll();
+    res.json(users);
   } catch {
-    res.status(500).json({ error: "Failed to retrieve user" });
+    res.status(500).json({ error: "Failed to retrieve users data" });
   }
 });
 

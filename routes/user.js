@@ -38,7 +38,17 @@ router.delete("/:id", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const users = await User.findAll({ attributes: ["id", "name", "email"] });
+    const users = await User.findAll({ 
+      attributes: ["id", "name", "email"] ,
+      include: [
+        { 
+          model: Group
+        },
+        {
+          model: Task
+        }
+      ],
+    });
     res.success(users);
   } catch (err) {
     res.error("Failed to retrieve users data", 500, err.message);

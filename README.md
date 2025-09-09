@@ -58,8 +58,8 @@ npx sequelize-cli db:migrate
 ## API USERS
 
 - POST /users -> Create user
-- PUT /users/:id -> Update user
-- DELETE /users/:id -> Delete user
+- PUT /users/:id -> Update user by ID
+- DELETE /users/:id -> Delete user by ID
 - GET /users -> Get all users
 - GET /users/:id -> Get user by id (include groups & task)
 - GET /users/:id/groups -> Get user by id with their groups
@@ -68,17 +68,18 @@ npx sequelize-cli db:migrate
 ## API GROUPS
 
 - POST /groups -> Create group
-- PUT /groups/:id -> Update group
-- DELETE /groups/:id -> Delete group
+- PUT /groups/:id -> Update group by ID
+- DELETE /groups/:id -> Delete group by ID
 - GET /groups -> Get all Groups
 - GET /groups/:id -> Get group by id 
-- GET /groups/:id/users -> Get group by id with their users
-- POST /groups/:id/users/:id -> Add user to group by id
+- GET /groups/:id/users -> Get group by id (include users data in that group)
+- POST /groups/:groupId/users/:userId -> Add user to group by id
+- DELETE /groups/:groupId/users/:userId -> Delete user from group by id
 
 ## API TASK
 
-- POST /tasks -> Create task
-- PUT /tasks/:id -> Update task
-- DELETE /tasks/:id -> Delete task
+- POST /tasks -> Create task (include userId to handle task)
+- PUT /tasks/:id -> Update task by ID (include update userId)
+- DELETE /tasks/:id -> Delete task by ID
 - GET /tasks -> Get all tasks
-- GET /tasks/:id -> Get tasks by id
+- GET /tasks/:id -> Get tasks by id (include user data who handle the task)

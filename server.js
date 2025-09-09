@@ -3,9 +3,11 @@ import { sequelize } from "./config/db.js";
 import userRoutes from "./routes/user.js";
 import groupRoutes from "./routes/group.js";
 import taskRoutes from "./routes/task.js";
+import responseMiddleware from "./middleware/response.js";
 
 const app = express();
 app.use(express.json());
+app.use(responseMiddleware); 
 
 app.use("/users", userRoutes);
 app.use("/groups", groupRoutes);

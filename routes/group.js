@@ -6,9 +6,9 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   try {
     const group = await Group.create(req.body);
-    res.status(201).json(group);
-  } catch {
-    res.status(400).json({ error: "Failed to create group" });
+    res.success(group, 201);
+  } catch (err) {
+    res.error("Failed to create group", 400, err.message);
   }
 });
 
@@ -16,73 +16,102 @@ router.put("/:id", async (req, res) => {
   try {
     const group = await Group.findByPk(req.params.id);
     
-    if (!group) return res.status(404).json({ error: "Group not found" });
+    if (!group) return res.error("Group not found", 404);
     await group.update(req.body);
-    res.json(group);
-  } catch {
-    res.status(500).json({ error: "Failed to update group" });
+    res.success(group);
+  } catch (err) {
+    res.error("Failed to update group", 500, err.message);
   }
 });
 
 router.delete("/:id", async (req, res) => {
   try {
     const group = await Group.findByPk(req.params.id);
-    
-    if (!group) return res.status(404).json({ error: "Group not found" });
+
+    if (!group) return res.error("Group not found", 404);
     await group.destroy();
-    res.json({ message: "Group successfully deleted" });
-  } catch {
-    res.status(500).json({ error: "Failed to delete group" });
+    res.success({ message: "Group successfully deleted" });
+  } catch (err) {
+    res.error("Failed to delete group", 500, err.message);
   }
 });
 
 router.get("/", async (req, res) => {
   try {
     const groups = await Group.findAll();
-    res.json(groups);
-  } catch {
-    res.status(500).json({ error: "Failed to retrieve groups data" });
+    res.success(groups);
+  } catch (err) {
+    res.error("Failed to retrieve groups data", 500, err.message);
   }
 });
 
 router.get("/:id", async (req, res) => {
   try {
     const group = await Group.findByPk(req.params.id);
-    
-    if (!group) return res.status(404).json({ error: "Group not found" });
-    res.json(group);
-  } catch {
-    res.status(500).json({ error: "Failed to retrieve group" });
+
+    if (!group) return res.error("Group not found", 404);
+    res.success(group);
+  } catch (err) {
+    res.error("Failed to retrieve group", 500, err.message);
   }
 });
 
 router.get("/:id/users", async (req, res) => {
   try {
-    const group = await Group.findByPk(req.params.id, { include: User, });
-    
-    if (!group) return res.status(404).json({ 
-      error: "Group not found" });
-    res.json(group);
-  } catch {
-    res.status(500).json({ error: "Failed to retrieve user data in group" });
-  }
-});
-
-router.post("/:id/users/:id", async (req, res) => {
-  try {
-    const group = await Group.findByPk(req.params.id);
-    const user = await User.findByPk(req.params.id);
-
-    if (!group || !user) {
-      return res.status(404).json({ error: "User or Group not found" });
-    }
-    await group.addUser(user);
-    res.json({
-      message: `User ${user.name} successfully added to Group ${group.name}`,
+    const group = await Group.findByPk(req.params.id, {
+      include: { model: User, attributes: ["id", "name", "email"] },
+      order: [[User, "id", "ASC"]],
     });
-  } catch {
-    res.status(500).json({ error: "Failed to add user to group" });
+
+    if (!group) return res.error("Group not found", 404);
+    res.success(group);
+  } catch (err) {
+    res.error("Failed to retrieve user data in group", 500, err.message);
   }
 });
+
+router.post("/:groupId/users/:userId", async (req, res) => {
+  try {
+    const group = await Group.findByPk(req.params.groupId);
+    const user = await User.findByPk(req.params.userId);
+
+    if (!group || !user) return res.error("User or Group not found", 404);
+
+    const isAlreadyMember = await group.hasUser(user);
+
+    if (isAlreadyMember)
+      return res.error("User is already a member of this group", 409);
+    await group.addUser(user);
+    res.success({
+      message: `User ${user.name} successfully added to Group ${group.name}`,
+      group: { id: group.id, name: group.name },
+      user: { id: user.id, name: user.name },
+    });
+  } catch (err) {
+    console.error("Error adding user to group:", err);
+    res.error("Failed to add user to group", 500, err.message);
+  }
+});
+
+router.delete("/:groupId/users/:userId", async (req, res) => {
+  try {
+    const group = await Group.findByPk(req.params.groupId);
+    const user = await User.findByPk(req.params.userId);
+
+    if (!group || !user) return res.error("User or Group not found", 404);
+
+    const isMember = await group.hasUser(user);
+
+    if (!isMember) return res.error("User is not a member of this group", 404);
+    await group.removeUser(user);
+    res.success({
+      message: `User ${user.name} successfully removed from Group ${group.name}`,
+    });
+  } catch (err) {
+    console.error("Error removing user from group:", err);
+    res.error("Failed to remove user from group", 500, err.message);
+  }
+});
+
 
 export default router;

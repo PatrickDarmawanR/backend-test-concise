@@ -6,53 +6,53 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   try {
     const task = await Task.create(req.body);
-    res.status(201).json(task);
-  } catch {
-    res.status(400).json({ error: "Failed to create task" });
+    res.success(task, 201);
+  } catch (err) {
+    res.error("Failed to create task", 400, err.message);
   }
 });
 
 router.put("/:id", async (req, res) => {
   try {
     const task = await Task.findByPk(req.params.id);
-    
-    if (!task) return res.status(404).json({ error: "Task not found" });
+    if (!task) return res.error("Task not found", 404);
+
     await task.update(req.body);
-    res.json(task);
-  } catch {
-    res.status(400).json({ error: "Failed to update task" });
+    res.success(task);
+  } catch (err) {
+    res.error("Failed to update task", 400, err.message);
   }
 });
 
 router.delete("/:id", async (req, res) => {
   try {
     const task = await Task.findByPk(req.params.id);
-    
-    if (!task) return res.status(404).json({ error: "Task not found" });
+    if (!task) return res.error("Task not found", 404);
+
     await task.destroy();
-    res.json({ message: "Task successfully deleted" });
-  } catch {
-    res.status(500).json({ error: "Failed to delete task" });
+    res.success({ message: "Task successfully deleted" });
+  } catch (err) {
+    res.error("Failed to delete task", 500, err.message);
   }
 });
 
 router.get("/", async (req, res) => {
   try {
     const tasks = await Task.findAll({ include: User });
-    res.json(tasks);
-  } catch {
-    res.status(500).json({ error: "Failed to retrieve tasks" });
+    res.success(tasks);
+  } catch (err) {
+    res.error("Failed to retrieve tasks", 500, err.message);
   }
 });
 
 router.get("/:id", async (req, res) => {
   try {
     const task = await Task.findByPk(req.params.id, { include: User });
-    
-    if (!task) return res.status(404).json({ error: "Task not found" });
-    res.json(task);
-  } catch {
-    res.status(500).json({ error: "Failed to retrieve task" });
+    if (!task) return res.error("Task not found", 404);
+
+    res.success(task);
+  } catch (err) {
+    res.error("Failed to retrieve task", 500, err.message);
   }
 });
 

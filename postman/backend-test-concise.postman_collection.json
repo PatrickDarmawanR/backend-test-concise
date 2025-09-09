@@ -398,10 +398,6 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n"
-								},
 								"url": {
 									"raw": "{{BASE_URL}}/groups/3",
 									"host": [

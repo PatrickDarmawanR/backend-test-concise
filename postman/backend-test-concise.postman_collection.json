@@ -149,7 +149,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n",
+									"raw": "{\r\n    \"address\": \"Pamulang\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -157,13 +157,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_URL}}/users/8",
+									"raw": "{{BASE_URL}}/users/1",
 									"host": [
 										"{{BASE_URL}}"
 									],
 									"path": [
 										"users",
-										"8"
+										"1"
 									]
 								}
 							},
@@ -171,16 +171,9 @@
 						},
 						{
 							"name": "/users-get-all-users",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n"
-								},
 								"url": {
 									"raw": "{{BASE_URL}}/users",
 									"host": [
@@ -195,24 +188,17 @@
 						},
 						{
 							"name": "/users-get-by-id",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n"
-								},
 								"url": {
-									"raw": "{{BASE_URL}}/users/7",
+									"raw": "{{BASE_URL}}/users/1",
 									"host": [
 										"{{BASE_URL}}"
 									],
 									"path": [
 										"users",
-										"7"
+										"1"
 									]
 								}
 							},
@@ -223,10 +209,6 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n"
-								},
 								"url": {
 									"raw": "{{BASE_URL}}/users/5",
 									"host": [
@@ -364,13 +346,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_URL}}/groups/6",
+									"raw": "{{BASE_URL}}/groups/3",
 									"host": [
 										"{{BASE_URL}}"
 									],
 									"path": [
 										"groups",
-										"6"
+										"3"
 									]
 								}
 							},
@@ -378,16 +360,9 @@
 						},
 						{
 							"name": "/groups-get-all-groups",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \"description\": \"GRUP 3 SANGAT TERLUCU\" }\r\n"
-								},
 								"url": {
 									"raw": "{{BASE_URL}}/groups",
 									"host": [
@@ -402,24 +377,17 @@
 						},
 						{
 							"name": "/groups-get-by-id",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \"description\": \"GRUP 3 SANGAT TERLUCU\" }\r\n"
-								},
 								"url": {
-									"raw": "{{BASE_URL}}/groups/5",
+									"raw": "{{BASE_URL}}/groups/1",
 									"host": [
 										"{{BASE_URL}}"
 									],
 									"path": [
 										"groups",
-										"5"
+										"1"
 									]
 								}
 							},
@@ -435,13 +403,13 @@
 									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n"
 								},
 								"url": {
-									"raw": "{{BASE_URL}}/groups/2",
+									"raw": "{{BASE_URL}}/groups/3",
 									"host": [
 										"{{BASE_URL}}"
 									],
 									"path": [
 										"groups",
-										"2"
+										"3"
 									]
 								}
 							},
@@ -459,7 +427,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"Fitur search 1\",\r\n  \"deadline\": \"2025-09-21T23:59:59Z\",\r\n  \"userId\": 7\r\n}\r\n",
+									"raw": "{\r\n  \"name\": \"Fitur search 1\",\r\n  \"deadline\": \"2025-09-21T23:59:59Z\",\r\n  \"userId\": 1\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -485,7 +453,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"Fitur search 2\",\r\n  \"deadline\": \"2025-09-21T23:59:59Z\",\r\n  \"userId\": 7\r\n}\r\n",
+									"raw": "{\r\n  \"name\": \"Fitur search 2\",\r\n  \"deadline\": \"2025-09-21T23:59:59Z\",\r\n  \"userId\": 4\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -511,7 +479,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"Fitur filter data 1\"\r\n}\r\n",
+									"raw": "{\r\n    \"userId\": 3\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -519,13 +487,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_URL}}/tasks/8",
+									"raw": "{{BASE_URL}}/tasks/1",
 									"host": [
 										"{{BASE_URL}}"
 									],
 									"path": [
 										"tasks",
-										"8"
+										"1"
 									]
 								}
 							},
@@ -533,16 +501,9 @@
 						},
 						{
 							"name": "/tasks-gat-all",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"Fitur filter data 1\"\r\n}\r\n"
-								},
 								"url": {
 									"raw": "{{BASE_URL}}/tasks",
 									"host": [
@@ -559,7 +520,17 @@
 							"name": "/tasks-get-by-id",
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
 							},
 							"response": []
 						},
@@ -636,15 +607,15 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL}}/groups/5/users/8",
+									"raw": "{{BASE_URL}}/groups/1/users/2",
 									"host": [
 										"{{BASE_URL}}"
 									],
 									"path": [
 										"groups",
-										"5",
+										"1",
 										"users",
-										"8"
+										"2"
 									]
 								}
 							},
@@ -656,15 +627,15 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL}}/groups/6/users/8",
+									"raw": "{{BASE_URL}}/groups/2/users/2",
 									"host": [
 										"{{BASE_URL}}"
 									],
 									"path": [
 										"groups",
-										"6",
+										"2",
 										"users",
-										"8"
+										"2"
 									]
 								}
 							},
@@ -676,13 +647,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL}}/groups/5/users",
+									"raw": "{{BASE_URL}}/groups/1/users",
 									"host": [
 										"{{BASE_URL}}"
 									],
 									"path": [
 										"groups",
-										"5",
+										"1",
 										"users"
 									]
 								}
@@ -694,10 +665,6 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n"
-								},
 								"url": {
 									"raw": "{{BASE_URL}}/groups/2/users/2",
 									"host": [

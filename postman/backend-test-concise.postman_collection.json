@@ -7,6 +7,745 @@
 	},
 	"item": [
 		{
+			"name": "REVISI-TEST",
+			"item": [
+				{
+					"name": "USERS",
+					"item": [
+						{
+							"name": "/users-7",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"orang 1\",\r\n  \"email\": \"orang1@yahoo.com\",\r\n  \"phone\": \"089256732345\",\r\n  \"address\": \"Jakarta\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users-8",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"orang 2\",\r\n  \"email\": \"orang2@yahoo.com\",\r\n  \"phone\": \"08925678945\",\r\n  \"address\": \"Jakarta\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users-9",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"orang 3\",\r\n  \"email\": \"orang3@yahoo.com\",\r\n  \"phone\": \"089256765425\",\r\n  \"address\": \"Batam\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users-10",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"orang 4\",\r\n  \"email\": \"orang4@yahoo.com\",\r\n  \"phone\": \"089256765425\",\r\n  \"address\": \"Batam\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users-11",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"orang 5\",\r\n  \"email\": \"orang5@yahoo.com\",\r\n  \"phone\": \"082345765425\",\r\n  \"address\": \"Pontianak\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users-update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users/8",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users-get-all-users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users-get-by-id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users/7",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users-delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GROUPS",
+					"item": [
+						{
+							"name": "/groups-4",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"name\": \"Group PERTAMA\", \"description\": \"GRUP 1 SANGAT TERBAIK\" }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/groups",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/groups-5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"name\": \"Group KEDUA\", \"description\": \"GRUP 2 SANGAT TERBURUK\" }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/groups",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/groups-6",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"name\": \"Group KETIGA\", \"description\": \"GRUP 3 SANGAT TERKOMPAK\" }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/groups",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/groups-update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"description\": \"GRUP 3 SANGAT TERLUCU\" }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/groups/6",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/groups-get-all-groups",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"description\": \"GRUP 3 SANGAT TERLUCU\" }\r\n"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/groups",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/groups-get-by-id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"description\": \"GRUP 3 SANGAT TERLUCU\" }\r\n"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/groups/5",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/groups-delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/groups/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "TASKS",
+					"item": [
+						{
+							"name": "/tasks-7 (include userId-7 to handle task)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Fitur search 1\",\r\n  \"deadline\": \"2025-09-21T23:59:59Z\",\r\n  \"userId\": 7\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/tasks-8 (include userId-7 to handle task)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Fitur search 2\",\r\n  \"deadline\": \"2025-09-21T23:59:59Z\",\r\n  \"userId\": 7\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/tasks-update (include update userId)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Fitur filter data 1\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/8",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/tasks-gat-all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Fitur filter data 1\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/tasks-get-by-id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "/tasks-delete-id1",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/tasks-delete-id2",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/tasks-delete-id4",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/4",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/tasks-delete-id5",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/5",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ADDITIONAL",
+					"item": [
+						{
+							"name": "/add-user7-to-group4",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Fitur filter data 1\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/groups/4/users/7",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups",
+										"4",
+										"users",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/add-user7-to-group5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/groups/5/users/7",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups",
+										"5",
+										"users",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/add-user8-to-group5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/groups/5/users/8",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups",
+										"5",
+										"users",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/add-user8-to-group6",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/groups/6/users/8",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups",
+										"6",
+										"users",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/get-groups-by-id (include user)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/groups/5/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups",
+										"5",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/delete-user8-from-group6",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"address\": \"Pamulang\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/groups/6/users/8",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"groups",
+										"6",
+										"users",
+										"8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "/users",
 			"request": {
 				"method": "POST",

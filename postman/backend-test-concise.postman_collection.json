@@ -558,10 +558,6 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"Fitur filter data 1\"\r\n}\r\n"
-								},
 								"url": {
 									"raw": "{{BASE_URL}}/groups/4/users/1",
 									"host": [
